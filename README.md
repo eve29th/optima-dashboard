@@ -70,6 +70,23 @@ Selenium + ChromeDriver  →  키워드 분류기 (5-class)  →  일별 집계
 | 🔍 상품별 리뷰 | 상품 선택 → 신호 점수, 키워드, 리뷰 테이블 |
 | 💡 추천 액션 | 상품별 리스크 요약 및 구체적 대응 가이드 |
 
+### 스크린샷
+
+**📊 전체 현황 — KPI · 리뷰 신호 지표**
+![전체 현황](docs/images/tab1_overview.png)
+
+**📈 일별 추이 — 불만 비율 시계열**
+![일별 추이](docs/images/tab2_trend.png)
+
+**☁️ 키워드 분석 — 워드클라우드**
+![키워드 분석](docs/images/tab3_keyword.png)
+
+**🔍 상품별 리뷰 — 신호 점수 · 워드클라우드**
+![상품별 리뷰](docs/images/tab4_product.png)
+
+**💡 추천 액션 — 상품별 대응 가이드**
+![추천 액션](docs/images/tab5_action.png)
+
 ---
 
 ## 🛠️ 기술 스택
