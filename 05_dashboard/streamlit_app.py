@@ -422,12 +422,9 @@ with tab4:
 
     with col2:
         st.subheader("키워드 워드클라우드")
-        p_freq = {}
-        for col in ["defect_hits", "transaction_hits", "usability_hits", "fit_hits"]:
-            hits = p_rv[col].dropna().str.split("|").explode()
-            hits = hits[hits.str.strip() != ""]
-            for kw_word, cnt in hits.value_counts().items():
-                p_freq[kw_word] = p_freq.get(kw_word, 0) + int(cnt)
+        # keyword_daily에서 해당 상품 키워드 집계
+        p_kw = kw_daily[kw_daily["product_url"] == sel_prod]
+        p_freq = dict(zip(p_kw["keyword"], p_kw["count"])) if not p_kw.empty else {}
 
         if p_freq:
             wc_img = WordCloud(
