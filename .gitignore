@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+*.venv
+
+# Data - 용량 큰 파일 제외
+data/raw/
+data/wordcloud/
+
+# DB 덤프 (민감 정보 포함 가능)
+db/*.sql
+
+# 환경 설정
+db/config.py
+.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# 모델 파일 (용량 큼)
+02_preprocessing/saved_models/
+*.pt
+*.bin
+*.ckpt
+
+# 임시 파일
+*.log
+*.tmp
