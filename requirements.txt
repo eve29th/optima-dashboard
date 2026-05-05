@@ -1,0 +1,29 @@
+# Optima Project - 쿠팡 리뷰 리스크 조기경보 시스템
+# pip install -r requirements.txt
+
+# 웹 크롤링
+selenium>=4.0.0
+undetected-chromedriver>=3.5.0
+
+# 데이터 처리
+pandas>=1.5.0
+numpy>=1.23.0
+
+# 머신러닝 / NLP
+scikit-learn>=1.1.0
+torch>=2.0.0
+transformers>=4.30.0
+sentencepiece>=0.1.99
+nltk>=3.8.0
+
+# 데이터베이스 연동
+pymysql>=1.1.0
+sqlalchemy>=2.0.0
+
+# 대시보드
+streamlit>=1.25.0
+altair>=5.0.0
+matplotlib>=3.7.0
+
+# 유틸리티
+tqdm>=4.65.0
