@@ -144,13 +144,13 @@ with tab1:
     c1.metric("총 리뷰 수", f"{len(rv):,}")
     c2.metric("평균 별점", f"{rv['rating'].mean():.2f} ★")
     c3.metric("불만 리뷰 비율", f"{(rv['complaint_type'] != 'none').mean()*100:.1f}%")
-    c4.metric("저평점 비율 (1~2★)", f"{(rv['rating'] <= 2).mean()*100:.1f}%")
+    c4.metric("저평점 비율 (1–2★)", f"{(rv['rating'] <= 2).mean()*100:.1f}%")
 
     st.divider()
 
     # ── 리뷰 신호 지표 카테고리별 현황 ──
     st.subheader("📡 리뷰 신호 지표 카테고리별 현황")
-    st.caption("리뷰 신호 지표(0~100): 높을수록 안정 / 위험 < 33 / 주의 33~66 / 정상 ≥ 66")
+    st.caption("리뷰 신호 지표(0–100): 높을수록 안정 / 위험 < 33 / 주의 33–66 / 정상 ≥ 66")
 
     latest_rem = rm.sort_values("bucket_month").groupby("category").last().reset_index()
 
@@ -263,7 +263,7 @@ with tab2:
                 label=cat, linewidth=1.5, marker="o", markersize=3)
     ax.axhline(66, color="#21BA45", linestyle="--", linewidth=0.8, alpha=0.6, label="정상 기준(66)")
     ax.axhline(33, color="#FF4B4B", linestyle="--", linewidth=0.8, alpha=0.6, label="위험 기준(33)")
-    ax.set_ylabel("신호 점수 (0~100)")
+    ax.set_ylabel("신호 점수 (0–100)")
     ax.set_ylim(0, 100)
     ax.legend(loc="upper left", framealpha=0)
     ax.spines[["top", "right"]].set_visible(False)
@@ -576,7 +576,7 @@ with tab5:
     elif signal < 66:
         actions.append(("⚠ 주의 모니터링",
             f"신호 점수 {signal:.1f}점으로 주의 구간입니다. "
-            "주 1~2회 신규 리뷰를 점검하고 불만 급증 여부를 확인하세요."))
+            "주 1–2회 신규 리뷰를 점검하고 불만 급증 여부를 확인하세요."))
     else:
         actions.append(("✅ 양호 — 긍정 마케팅 활용",
             f"신호 점수 {signal:.1f}점으로 정상입니다. "
@@ -628,7 +628,7 @@ with tab5:
 
     if low_r > 0.20:
         actions.append(("⭐ 저평점 리뷰 관리",
-            f"1~2★ 저평점 비율이 {low_r*100:.1f}%입니다.\n\n"
+            f"1–2★ 저평점 비율이 {low_r*100:.1f}%입니다.\n\n"
             "- 저평점 리뷰 전체에 48시간 이내 판매자 답변을 등록하세요\n"
             "- 반복되는 동일 불만은 상품 정보 수정으로 선제 대응하세요\n"
             "- 환불 처리 후에도 남은 저평점은 정중한 답변으로 신뢰를 회복하세요\n"
